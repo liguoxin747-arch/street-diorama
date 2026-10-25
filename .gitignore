@@ -1,0 +1,22 @@
+node_modules
+dist
+dist-ssr
+*.local
+.DS_Store
+*.log
+npm-debug.log*
+.vite
+coverage
+
+# 本地缓存与临时目录
+.npm-cache
+.tmp
+.chrome-profile
+tests/e2e/out
+
+# 验收/审计脚本产出的截图与报告（体积很大，不入库）
+tests/out
+_hero_check.json
+
+# 开发过程中的废弃草稿
+scratch

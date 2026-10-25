@@ -1,0 +1,36 @@
+{
+  "name": "street-diorama",
+  "private": true,
+  "version": "1.0.0",
+  "description": "街角微缩景观 — Three.js 程序化 3D 微缩场景（Iron Front 的姊妹项目，全部贴图与模型均为程序化生成）",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:e2e": "node tests/e2e/diorama-check.mjs",
+    "test:interact": "node tools/interact.mjs",
+    "test:place": "node tools/place-audit.mjs",
+    "test:clear": "node tools/road-audit.mjs",
+    "test:day": "node tools/day-check.mjs",
+    "test:slider": "node tools/slider-check.mjs",
+    "test:view": "node tools/view-check.mjs",
+    "test:space": "node tools/occupancy-check.mjs",
+    "shot": "node tools/shot.mjs",
+    "verify": "npm run typecheck && npm run test && npm run build"
+  },
+  "dependencies": {
+    "three": "^0.186.1"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.0",
+    "@types/three": "^0.186.0",
+    "puppeteer-core": "^25.15.0",
+    "typescript": "^5.9.0",
+    "vite": "^7.1.0",
+    "vitest": "^3.2.0"
+  }
+}

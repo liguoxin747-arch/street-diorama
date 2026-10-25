@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+    <title>过街 · 原型 M0/M1</title>
+    <style>
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        background: #05070a;
+        font: 13px/1.5 "Segoe UI", "Microsoft YaHei", sans-serif;
+        color: #cfdae4;
+        -webkit-tap-highlight-color: transparent;
+      }
+      #proto-root {
+        position: fixed;
+        inset: 0;
+      }
+      #proto-hud {
+        position: fixed;
+        left: 18px;
+        top: 16px;
+        display: grid;
+        grid-template-columns: auto auto;
+        gap: 3px 12px;
+        padding: 11px 14px;
+        border-left: 2px solid rgba(255, 183, 101, 0.75);
+        background: rgba(6, 10, 15, 0.62);
+        backdrop-filter: blur(3px);
+        letter-spacing: 0.3px;
+        pointer-events: none;
+      }
+      #proto-hud .k {
+        color: #7f93a6;
+      }
+      #proto-hud b {
+        font-weight: 500;
+        text-align: right;
+        font-variant-numeric: tabular-nums;
+      }
+      #proto-hud i {
+        grid-column: 1 / -1;
+        font-style: normal;
+        font-size: 12px;
+        opacity: 0.9;
+        padding-top: 3px;
+      }
+      #proto-hud .hot {
+        color: #ff8f5e;
+      }
+      #proto-hud .warm {
+        color: #ffc98a;
+      }
+      #proto-hud .cool {
+        color: #7fc7ff;
+      }
+      #proto-hud .m {
+        color: #7f93a6;
+      }
+      #proto-hud .m.on {
+        color: #ffd9a8;
+      }
+      #proto-hud .m.dead {
+        color: #55606b;
+        text-decoration: line-through;
+      }
+      #proto-hud b.dead {
+        color: #55606b;
+      }
+      #proto-banner {
+        position: fixed;
+        inset: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        pointer-events: none;
+        opacity: 0;
+        transition: opacity 220ms ease;
+        background: radial-gradient(ellipse at center, rgba(4, 7, 10, 0.35), rgba(4, 7, 10, 0.8));
+      }
+      #proto-banner[data-shown='1'] {
+        opacity: 1;
+      }
+      #proto-banner b {
+        font-size: 30px;
+        font-weight: 500;
+        letter-spacing: 6px;
+        color: #ffd9a8;
+      }
+      #proto-banner span {
+        font-size: 13px;
+        color: #93a6b6;
+        letter-spacing: 1px;
+      }
+      #proto-legend {
+        position: fixed;
+        left: 18px;
+        bottom: 14px;
+        color: #6b7d8c;
+        font-size: 11.5px;
+        letter-spacing: 0.4px;
+        pointer-events: none;
+      }
+      #proto-legend kbd {
+        color: #a9bccb;
+        border: 1px solid rgba(126, 158, 186, 0.3);
+        border-radius: 3px;
+        padding: 0 4px;
+        margin: 0 1px;
+        font-family: inherit;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="proto-root"></div>
+    <div id="proto-hud"></div>
+    <div id="proto-banner" data-shown="0"></div>
+    <div id="proto-legend">
+      <kbd>WASD</kbd> 移动 · <kbd>Shift</kbd> 快走 · <kbd>Ctrl</kbd> 蹲伏 · <kbd>空格</kbd> 结束回合 · <kbd>G</kbd> 光照图 · <kbd>R</kbd> 重来
+    </div>
+    <script type="module" src="/src/proto/main.ts"></script>
+  </body>
+</html>
